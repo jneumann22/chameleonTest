@@ -1,0 +1,4 @@
+@import '/static/css/index.wxss'; 
+ .first-com-text {
+  color: #0f0;
+}

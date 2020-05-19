@@ -1,0 +1,99 @@
+<template>
+    <view>
+      <image
+        @load="handleLoad"
+        v-if="!imageSrc || images.length === 0"
+        :class="['image', border && 'rounded-border']"
+        :resize="resize"
+        :src="noImage"
+      />
+      <image
+      v-if="imageSrc.length === 1"
+      :class="['image', border && 'rounded-border']"
+      :resize="resize"
+      :src="imageSrc[0]"
+      @load="handleLoad"
+      />
+      <slider v-if="imageSrc.length > 1" :class="['slider', border && 'rounded-border']" interval="3000" auto-play="true">
+        <view class="image-frame" v-for="img in imageSrc" :key="img">
+          <image @load="handleLoad" :class="['image', border && 'rounded-border']" :resize="resize" :src="img"></image>
+        </view>
+        <indicator class="slider-indicator" />
+      </slider>
+    </view>
+</template>
+
+<script>
+export default {
+  name: 'Gallery',
+  props: {
+    images: Array[String],
+    resize: {type: String, default: 'cover'},
+    border: {type: Boolean, default: true},
+    domain: String
+  },
+  data () {
+    return {
+      imageSrc: this.images
+    }
+  },
+  computed: {
+    noImage: function () {
+      if (this.domain === 'shoe' || this.domain === 'recipe') {
+        return `https://m.meetkai.com/static/develop/kai_birds/gallery-${this.domain}.png`
+      } else if (this.domain) {
+        return `https://m.meetkai.com/static/develop/domains/${this.domain}.png`
+      } else {
+        return 'https://m.meetkai.com/static/develop/images/galleryPlaceholderTemp.png'
+      }
+    }
+  },
+  methods: {
+    handleLoad (event) {
+      if (event.success) {
+        return null
+      } else {
+        if (this.domain === 'shoe' || this.domain === 'recipe') {
+          this.imageSrc = [`https://m.meetkai.com/static/develop/kai_birds/kai-${this.domain}.png`]
+          return this.imageSrc
+        } else if (this.domain) {
+          this.imageSrc = [`https://m.meetkai.com/static/develop/domains/${this.domain}.png`]
+        } else {
+          this.imageSrc = ['https://m.meetkai.com/static/develop/images/galleryPlaceholderTemp.png']
+          return this.imageSrc
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .rounded-border {
+    border-top-left-radius: 37px;
+    border-top-right-radius: 37px;
+  }
+  .slider {
+    height: 462px;
+    width: 710px;
+  }
+  .slider-indicator {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    opacity: 0.8;
+    item-color: #fff;
+    item-selected-color: #00A2B0;
+  }
+  .image-frame {
+    position: relative;
+    height: 462px;
+    width: 710px;
+  }
+  .image {
+    height: 462px;
+    width: 710px;
+  }
+</style>

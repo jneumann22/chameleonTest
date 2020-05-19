@@ -1,0 +1,55 @@
+<template>
+  <view c-bind:tap="onClick" class="['thumbnail-container', highlight && 'highlight']">
+    <image @load="handleLoad" :class="[size]" resize="cover" :src="getImage"/>
+    <text class="name-text">{{name}}</text>
+    <text class="subtitle-text">{{subtitle}}</text>
+  </view>
+</template>
+
+<script>
+
+class Thumbnail {
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new Thumbnail();
+</script>
+<style>
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

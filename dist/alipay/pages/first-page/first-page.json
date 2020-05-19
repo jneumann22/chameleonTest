@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "first-com": "./../../components/first-com/first-com",
+        "meditation-card": "./../../domains/meditation/meditation-card"
+    },
+    "defaultTitle": "index",
+    "pullRefresh": false,
+    "allowsBounceVertical": "YES",
+    "titleBarColor": "#ffffff"
+}

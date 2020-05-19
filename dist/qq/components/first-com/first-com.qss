@@ -1,0 +1,4 @@
+@import '/static/css/index.qss'; 
+ .first-com-text {
+  color: #0f0;
+}

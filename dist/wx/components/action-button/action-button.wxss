@@ -1,0 +1,92 @@
+@import '/static/css/index.wxss'; 
+ .button-container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: auto;
+}
+.buttonBody {
+  border-radius: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  margin: 0 15px;
+  padding: 10px 0;
+  opacity: 1;
+}
+.button-text {
+  color: #ffffff;
+  font-family: Source Sans Pro SemiBold Weex;
+  font-weight: 600;
+  text-align: center;
+  word-wrap: break-word;
+}
+.buttonHighlight:active {
+  opacity: 0.8;
+}
+.orange {
+  background-color: #F58423;
+}
+.teal {
+  background-color: #00A2B0;
+}
+.white {
+  background-color: #FFFFFF;
+}
+.text-teal {
+  color: #00A2B0;
+}
+.outline-teal {
+  border-color: #00A2B0;
+}
+.small {
+  height: 64px;
+  width: 328px;
+}
+.large {
+  height: 91px;
+  width: 544px;
+}
+.outline-solid {
+  border: solid;
+  border-width: 1px;
+}
+.font-large {
+  font-size: 30px;
+}
+.font-small-bold {
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 34px;
+}
+.default-orange-button {
+  background-color: #E28B08;
+  height: 97px;
+  width: 624px;
+}
+.half-orange-button {
+  background-color: #E28B08;
+  border-radius: 15px;
+  height: 65px;
+  width: 301px;
+}
+.default-orange-button-text {
+  font-size: 39px;
+}
+.half-orange-button-text {
+  font-size: 33px;
+}
+.default-teal-button {
+  border: solid;
+  border-color: #00A2B0;
+  border-width: 1px;
+  height: 64px;
+  width: 328px;
+}

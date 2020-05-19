@@ -1,0 +1,7 @@
+<view class="screen-container  cml-base cml-view cml-24dfc140">
+  <view class="card-container  cml-base cml-view cml-24dfc140">
+    <view class="card-image  cml-base cml-view cml-24dfc140">
+    <view class=" cml-base cml-view cml-24dfc140"><action-button text="Meditate Now" defaultButtonStyle="default-orange-button" defaultTextStyle="default-orange-button-text" handler="{{pressActionButton}}" class=" cml-base cml-action-button cml-24dfc140" /></view>
+    </view>
+  </view>
+</view>

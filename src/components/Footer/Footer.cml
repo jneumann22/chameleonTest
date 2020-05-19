@@ -1,0 +1,80 @@
+<template>
+    <view class="footer-container">
+        <view class="footer-button" @click="onSearchClick">
+          <text class="button-text font-semibold">New Search</text>
+        </view>
+        <view v-if="musePivot && domain" class="center-line" />
+        <view v-if="musePivot && domain" class="footer-button" @click="onMoreResultsClick">
+          <text class="button-text font-semibold">More Results</text>
+        </view>
+    </view>
+</template>
+
+<script>
+export default {
+  name: 'Footer',
+  props: {
+    domain: String,
+    musePivot: String
+  },
+  methods: {
+    onSearchClick () {
+      if (weex.config.env.platform === 'Web') {
+        alert('Pressed New Search')
+      } else {
+        const userAction = weex.requireModule('UserAction')
+        userAction.newSearch()
+      }
+    },
+    onMoreResultsClick () {
+      if (weex.config.env.platform === 'Web') {
+        if (this.musePivot === undefined) {
+          alert('no muse pivot')
+        } else {
+          alert(`Pressed More results for ${this.domain}, with muse-pivot ${this.musePivot}`)
+        }
+      } else {
+        if (this.musePivot === undefined) {
+          return null
+        } else {
+          const userAction = weex.requireModule('UserAction')
+          userAction.musePivotWx(this.musePivot, this.domain)
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .footer-container {
+    align-items: center;
+    flex-direction: row;
+    border-top-width: 1px;
+    border-top-color: #D8D8D8;
+    height: 84px;
+  }
+  .footer-button {
+    padding: 10px;
+    flex: 1;
+    opacity: 1;
+  }
+  .footer-button:active {
+    opacity: 0.2;
+  }
+  .button-text {
+    font-size: 35px;
+    color: #D3D3D3;
+    text-align: center;
+    line-height: 34px;
+  }
+  .center-line {
+    border-left-width: 1px;
+    border-left-color: #D8D8D8;
+    height: 84px;
+  }
+  .font-semibold {
+    font-family: Source Sans Pro SemiBold Weex;
+    font-weight: 600;
+  }
+</style>

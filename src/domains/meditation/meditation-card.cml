@@ -1,0 +1,177 @@
+<template lang="vue">
+  <view class="screen-container">
+    <view class="card-container">
+      <view class="card-image">
+      <action-button
+          text="Meditate Now"
+          defaultButtonStyle="default-orange-button"
+          defaultTextStyle="default-orange-button-text"
+          :handler="pressActionButton"
+      />
+      </view>
+    </view>
+  </view>
+    <!--    <Gallery :images="getImages" :domain="domain" />
+        <ImageIconButtons
+          :domain="domain"
+          :itemID="item_id"
+        />
+      </view>
+      <view class="card-content">
+        <view>
+          <text class="title font-semibold">{{title}}</text>
+          <view class="time-container">
+            <text class="time-text font-regular">{{getTime}}</text>
+          </view>
+          <view class="rating-container">
+            <StarRating :rating="rank" />
+          </view>
+        </view>
+        <view class="card-padding-20" />
+        <ActionButton
+          v-if="buy_url"
+          text="Meditate Now"
+          defaultButtonStyle="default-orange-button"
+          defaultTextStyle="default-orange-button-text"
+          :handler="pressActionButton"
+        />
+        <view class="card-padding-15" />
+        <OtherOptions :alternatives="alternatives" :domain="domain" />
+        <view class="card-padding-15" />
+        <Suggestion :suggestion="getFirstSuggestion" />
+        <view class="card-padding-15" />
+        <view class="row-button-container">
+          <RowButton
+            heading="Focus:"
+            :text="getFocus"
+            :handler="notImplemented"
+          />
+          <RowButton
+            heading="Placeholder:"
+            text=""
+            :handler="notImplemented"
+          />
+          <RowButton
+            heading="Placeholder:"
+            text=""
+            :handler="notImplemented"
+          />
+        </view>
+        <view class="card-padding-15" />
+        <Suggestion :suggestion="getSecondSuggestion" />
+      </view>
+      <Footer :domain="domain" :musePivot="muse_pivot"/>
+    </view>
+  </view> -->
+</template>
+
+
+<script>
+class MeditationCard{
+  methods = {
+    pressActionButton: function () {
+      console.log("handing this event hasnt been implemented")
+    }
+  }
+}
+export default new MeditationCard();
+
+
+
+// import ActionButton from '@/components/ActionButton/ActionButton'
+/*import Footer from '@/components/Footer'
+import Gallery from '@/components/Gallery'
+import HeaderIconButtons from '@/components/HeaderIconButtons'
+import ImageIconButtons from '@/components/ImageIconButtons'
+import RowButton from '@/components/RowButton'
+import StarRating from '@/components/StarRating'
+import Thumbnail from '@/components/Thumbnail'
+import OtherOptions from '@/components/OtherOptions'
+import Suggestion from '@/components/Suggestion'*/
+
+
+</script>
+
+
+
+<style scoped>
+ .screen-container {
+    width: auto;
+    margin: 0cpx;
+    padding-left: 20cpx;
+    padding-right: 20cpx;
+  }
+  .card-container {
+    border-width: 1cpx;
+    border-style: solid;
+    border-color: #D8D8D8;
+    border-radius: 37cpx;
+    height: auto;
+    width: 710cpx;
+    background-color: #fff;
+  }
+  .suggestion-container {
+    width: auto;
+    justify-content: center;
+  }
+  .title-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .rating-container{
+    padding-top: 8cpx;
+  }
+  .row-button-container {
+    flex-direction: row;
+    height: auto;
+    justify-content: center;
+    width: auto;
+  }
+  .card-content {
+    padding-top: 14cpx;
+    padding-right: 30cpx;
+    padding-left: 30cpx;
+    padding-bottom: 40cpx;
+  }
+  .card-padding-15 {
+    padding-top: 15cpx;
+  }
+  .card-padding-20 {
+    padding-top: 20cpx;
+  }
+  .card-image {
+    flex: 1;
+    height: auto;
+    width: auto;
+  }
+  .title {
+    color: #2B2B2B;
+    font-size: 40cpx;
+    word-wrap: break-word;
+  }
+  .scroller {
+    display: inline-flex;
+    flex-direction: row;
+  }
+  .font-regular {
+    font-family: Source Sans Pro Weex;
+  }
+  .font-semibold {
+    font-family: Source Sans Pro SemiBold Weex;
+    font-weight: 600;
+  }
+  .font-bold {
+    font-family: Source Sans Pro Bold Weex;
+    font-weight: 700;
+  }
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "action-button": "/components/action-button/action-button"
+    }
+  }
+}
+</script>
