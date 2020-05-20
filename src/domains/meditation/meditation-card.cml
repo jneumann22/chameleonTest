@@ -8,13 +8,15 @@
           defaultTextStyle="default-orange-button-text"
           :handler="pressActionButton"
       />
+       <Footer domain="domain" musePivot="muse_pivot"/>
+       <ImageIconButtons :domain="domain"
+          :itemID="item_id" />
       </view>
     </view>
   </view>
     <!--    <Gallery :images="getImages" :domain="domain" />
         <ImageIconButtons
-          :domain="domain"
-          :itemID="item_id"
+          
         />
       </view>
       <view class="card-content">
@@ -71,9 +73,64 @@ class MeditationCard{
   methods = {
     pressActionButton: function () {
       console.log("handing this event hasnt been implemented")
+    },
+    notImplemented () {
+      console.log("Handling this event hasn't been implemented")
     }
-  }
+  };
+ 
+  /*components: {
+    OtherOptions,
+    ActionButton,
+    Footer,
+    RowButton,
+    Thumbnail,
+    Gallery,
+    HeaderIconButtons,
+    ImageIconButtons,
+    StarRating,
+    Suggestion
+  };*/
+  props: {
+    item_id: String,
+    title: String,
+    keywords: {type: Array, default: 'Test'},
+    img_urls: {type: Array, default: 'Test'},
+    fit_urls: {type: Array, default: 'Test'},
+    muse_pivot: String,
+    rank: Number,
+    personalized_rank: Number,
+    buy_url: String,
+    share_url: String,
+    domain: String,
+    suggestions: {type: Array, default: 'Test'},
+    uid_url: String,
+    play_url: String,
+    focus: String,
+    sample_meditations: {type: Array, default: 'Test'},
+    time: Number,
+    alternatives: {type: Array, default: 'Test'}
+  };
+  computed= {
+    getImages () {
+      return `${this.fit_urls.length} ? ${this.fit_urls} : ${this.img_urls}`
+    },
+    getTime: function () {
+      return this.time !== 0 ? `${this.time} Minutes` : ''
+    },
+    getFirstSuggestion: function () {
+      return this.suggestions && this.suggestions.length ? this.suggestions[0] : null
+    },
+    getSecondSuggestion: function () {
+      return this.suggestions && this.suggestions.length > 1 ? this.suggestions[1] : null
+    },
+    getFocus: function () {
+      return this.focus ? this.focus : ''
+    }
+  };
+  
 }
+
 export default new MeditationCard();
 
 
@@ -170,7 +227,10 @@ import Suggestion from '@/components/Suggestion'*/
 {
   "base": {
     "usingComponents": {
-      "action-button": "/components/action-button/action-button"
+      "action-button": "/components/action-button/action-button",
+      "Footer": "/components/Footer/Footer",
+      "HeaderIconButtons": "/components/HeaderIconButtons/HeaderIconButtons",
+      "ImageIconButtons": "/components/ImageIconButtons/ImageIconButtons"
     }
   }
 }

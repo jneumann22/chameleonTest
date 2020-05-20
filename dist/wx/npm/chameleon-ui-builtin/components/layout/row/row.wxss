@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .flex-row-start-top {
+.flex-row-start-top {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

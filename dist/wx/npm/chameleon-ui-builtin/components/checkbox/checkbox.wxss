@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .cml-checkbox {
+.cml-checkbox {
   margin: 10rpx;
 }
 .cml-checkbox-wrap {

@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .button-container {
+.button-container {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;

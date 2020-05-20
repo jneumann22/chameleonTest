@@ -1,9 +1,0 @@
-{
-    "window": {
-        "defaultTitle": "Chameleon"
-    },
-    "pages": [
-        "pages/first-page/first-page"
-    ],
-    "usingComponents": {}
-}

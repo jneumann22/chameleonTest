@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .input-wrap {
+.input-wrap {
   font-size: 33rpx;
   height: 80rpx;
   line-height: 80rpx;

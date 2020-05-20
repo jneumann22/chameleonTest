@@ -4,7 +4,7 @@
       class="{{buttonClass}}"
       @click="handler"
     >
-      <text class= "{{textClass}}">{{textext>
+      <text class="{{textClass}}">{{textext>
     </view>
   </view>
 </template>
@@ -21,7 +21,7 @@ class ActionButton {
     }
   },
   props = {
-    text: String,
+    text: {type: String, default: 'Test'},
     defaultButtonStyle: String,
     defaultTextStyle: String,
     buttonOutlineColor: String,

@@ -1,51 +1,74 @@
-<template>
-  <view><text>Hello Chameleon!</text></view>
+<template lang="vue">
+  <view class="icon-button-container">
+    <view v-if="findLocationDetails" class="icon-button" @click="loadMap">
+      <image  class="icon" src="https://m.meetkai.com/static/develop/images/websiteIcon.png" resize="cover" />
+    </view>
+    <view v-if="telephone" class="icon-button" @click="makeCall">
+      <image  class="icon" src="https://m.meetkai.com/static/develop/images/phoneIcon.png" resize="cover" />
+    </view>
+  </view>
 </template>
 
 <script>
-
+// Component usage:
+// buttons = [{type: String, handler: Function}]
+// two possible types are 'phone' and 'website'
 class HeaderIconButtons {
-
-  data = {
-  }
-
   computed = {
+    findLocationDetails: function () {
+      console.log("hello")
+    },
+    
+     loadMap () {
+      /*if (weex.config.env.platform === 'Web') {
+        alert('loading map')
+      } else {
+        const userAction = weex.requireModule('UserAction')
+        userAction.mapToLocation(this.location.lat, this.location.lon, this.location.name)
+      }*/
+      console.log('loding map')
+    },
+
+    makeCall () {
+      /*if (weex.config.env.platform === 'Web') {
+        alert('calling restaurant')
+      } else {
+        const userAction = weex.requireModule('UserAction')
+        userAction.makeCall(this.telephone)
+      }*/
+      console.log('calling restaurant')
+    }
+
+
+  };
+
+  props: {
+    location: Object,
+    telephone: String
+  };
+  
+    
   }
 
-  watch  = {
-  }
-
-  methods = {
-  }
-
-  beforeCreate() {
-  }
-
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
-  }
-}
-
-export default new HeaderIconButtons();
+ export default new HeaderIconButtons();
 </script>
-<style>
 
+<style scoped>
+    .icon-button-container {
+        position: absolute;
+        right: 30px;
+        top: 15;
+    }
+     .icon {
+        height: 50px;
+        width: 50px;
+    }
+    .icon-button {
+       margin-bottom: 25px;
+    }
 </style>
+
 <script cml-type="json">
 {
-  "base": {
-    "usingComponents": {}
-  }
 }
 </script>

@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .c-foot {
+.c-foot {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

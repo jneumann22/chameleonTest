@@ -1,0 +1,9 @@
+<view class="footer-container ">
+    <view class="footer-button " bindtap="_cmlEventProxy" data-eventtap="{{['onSearchClick']}}">
+      <text class="button-text font-semibold ">New Search</text>
+    </view>
+    <view wx:if="{{musePivot && domain}}" class="center-line " />
+    <view wx:if="{{musePivot && domain}}" class="footer-button " bindtap="_cmlEventProxy" data-eventtap="{{['onMoreResultsClick']}}">
+      <text class="button-text font-semibold ">More Results</text>
+    </view>
+</view>

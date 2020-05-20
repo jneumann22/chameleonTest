@@ -1,5 +1,0 @@
-<view class="button-container  cml-base cml-view cml-18b81d88">
-  <view onTap="_cmlEventProxy" data-eventtap="{{['handler']}}" class="{{buttonClass}}  cml-base cml-view cml-18b81d88">
-    <text class="{{textClass}}  cml-base cml-text cml-18b81d88">{{"test"}}</text>
-  </view>
-</view>

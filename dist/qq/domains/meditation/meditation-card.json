@@ -1,6 +1,8 @@
 {
     "usingComponents": {
-        "action-button": "./../../components/action-button/action-button"
+        "action-button": "./../../components/action-button/action-button",
+        "Footer": "./../../components/Footer/Footer",
+        "HeaderIconButtons": "./../../components/HeaderIconButtons/HeaderIconButtons"
     },
     "component": true
 }

@@ -1,4 +1,4 @@
-<template>
+<template lang="vue">
     <view class="footer-container">
         <view class="footer-button" @click="onSearchClick">
           <text class="button-text font-semibold">New Search</text>
@@ -11,27 +11,23 @@
 </template>
 
 <script>
-export default {
-  name: 'Footer',
-  props: {
-    domain: String,
-    musePivot: String
-  },
-  methods: {
-    onSearchClick () {
-      if (weex.config.env.platform === 'Web') {
-        alert('Pressed New Search')
-      } else {
-        const userAction = weex.requireModule('UserAction')
-        userAction.newSearch()
-      }
+ class Footer {
+   computed = {
+     onSearchClick () {
+      // if (weex.config.env.platform === 'Web') {
+      //   console.log('Pressed New Search')
+      // } else {
+      //   const userAction = weex.requireModule('UserAction')
+      //   userAction.newSearch()
+      // }
+      console.log('pressed new search')
     },
     onMoreResultsClick () {
-      if (weex.config.env.platform === 'Web') {
+      /*if (weex.config.env.platform === 'Web') {
         if (this.musePivot === undefined) {
-          alert('no muse pivot')
+          console.log('no muse pivot')
         } else {
-          alert(`Pressed More results for ${this.domain}, with muse-pivot ${this.musePivot}`)
+          console.log(`Pressed More results for ${this.domain}, with muse-pivot ${this.musePivot}`)
         }
       } else {
         if (this.musePivot === undefined) {
@@ -39,11 +35,20 @@ export default {
         } else {
           const userAction = weex.requireModule('UserAction')
           userAction.musePivotWx(this.musePivot, this.domain)
-        }
+        }*/
+        console.log('No muse pivot')
       }
-    }
+    
+   };
+   props: {
+    domain: String,
+    musePivot: String
   }
-}
+ }
+
+  
+ export default new Footer();
+
 </script>
 
 <style scoped>
@@ -78,3 +83,8 @@ export default {
     font-weight: 600;
   }
 </style>
+
+<script cml-type="json">
+{
+}
+</script>

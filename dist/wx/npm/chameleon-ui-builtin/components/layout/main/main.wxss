@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .c-main {
+.c-main {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

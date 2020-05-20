@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .rich-text {
+.rich-text {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

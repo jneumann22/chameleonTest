@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .cml-radio {
+.cml-radio {
   margin: 10rpx;
 }
 .cml-radio-wrap {

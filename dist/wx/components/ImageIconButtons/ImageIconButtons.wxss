@@ -1,0 +1,28 @@
+.icon-button-container {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.icon {
+  height: 50px;
+  width: 50px;
+}
+.icon-button {
+  height: auto;
+  width: auto;
+  border-radius: 25px;
+  opacity: 0.7;
+  margin-top: 25px;
+}
+.black {
+  background-color: #000;
+}
+.red {
+  background-color: #FF0000;
+}
+.blue {
+  background-color: #7EC0EE;
+}
+.grey {
+  background-color: #D3D3D3;
+}

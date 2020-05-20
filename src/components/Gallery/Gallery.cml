@@ -1,4 +1,4 @@
-<template>
+<template lang="vue">
     <view>
       <image
         @load="handleLoad"

@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .textarea-wrap {
+.textarea-wrap {
   font-size: 40rpx;
   height: 150rpx;
   line-height: 50rpx;

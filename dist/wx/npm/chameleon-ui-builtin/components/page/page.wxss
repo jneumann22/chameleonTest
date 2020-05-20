@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .page {
+.page {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

@@ -1,0 +1,5 @@
+<view class="icon-button-container ">
+    <view bindtap="_cmlEventProxy" data-eventtap="{{['onLikeClick']}}" class="{{['icon-button', likeIconColor]}} "><image class="icon " src="https://m.meetkai.com/static/develop/images/favoriteIcon.png" /></view>
+    <view bindtap="_cmlEventProxy" data-eventtap="{{['onDislikeClick']}}" class="{{['icon-button', dislikeIconColor]}} "><image class="icon " src="https://m.meetkai.com/static/develop/images/noThanksIcon.png" /></view>
+    <view bindtouchstart="_cmlEventProxy" data-eventtouchstart="{{['onShareClick']}}" bindtouchend="_cmlEventProxy" data-eventtouchend="{{['shareIconRevertColor']}}" class="{{['icon-button', shareIconColor]}} "><image class="icon " src="https://m.meetkai.com/static/develop/images/shareIcon.png" /></view>
+</view>

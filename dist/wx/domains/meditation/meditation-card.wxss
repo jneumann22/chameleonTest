@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .screen-container {
+.screen-container {
   width: auto;
   margin: 0rpx;
   padding-left: 20rpx;

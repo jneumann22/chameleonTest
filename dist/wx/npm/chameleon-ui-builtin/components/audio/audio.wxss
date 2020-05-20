@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .audio-root {
+.audio-root {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;

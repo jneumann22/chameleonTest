@@ -11,6 +11,11 @@ cml.config.merge({
   buildInfo: {
     wxAppId: '123456'
   },
+  baseStyle: {
+    wx: false,
+    web: false,
+    alipay: false
+  },
   wx: {
     dev: {
     },

@@ -21,14 +21,14 @@ var ActionButton = function ActionButton() {
 
   this.computed = {
     buttonClass: function buttonClass() {
-      return this.buttonBody + ' ' + this.buttonHighlight + ' ' + this.defaultButtonStyle + ' ' + this.buttonColor + ' ' + this.buttonSize + ' ' + this.buttonOutlineColor + ' ' + this.buttonOutlineWidth + ' ';
+      return 'buttonBody buttonHighlight ' + this.defaultButtonStyle + ' ' + this.buttonColor + ' ' + this.buttonSize + ' ' + this.buttonOutlineColor + ' ' + this.buttonOutlineWidth + ' ';
     },
     textClass: function textClass() {
-      return this.button - text + ' ' + this.defaultTextStyle + ' ' + this.textColor + ' ' + this.textSize;
+      return 'button-text ' + this.defaultTextStyle + ' ' + this.textColor + ' ' + this.textSize;
     }
   };
   this.props = {
-    text: String,
+    text: { type: String, default: 'Test' },
     defaultButtonStyle: String,
     defaultTextStyle: String,
     buttonOutlineColor: String,

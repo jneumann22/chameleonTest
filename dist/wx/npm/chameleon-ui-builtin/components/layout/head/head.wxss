@@ -1,5 +1,4 @@
-@import '/static/css/index.wxss'; 
- .c-head {
+.c-head {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
