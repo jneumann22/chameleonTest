@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([29],{
+__CML__GLOBAL.webpackJsonp([31],{
 
 /***/ "../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/usr/local/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=qq&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/carousel-item/carousel-item.qq.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -45,9 +45,7 @@ var CCarouselItem = function CCarouselItem() {
 exports.default = __CML__WRAPPER__(new CCarouselItem(), __CML_ERROR__, __enableTypes__, __INTERFAE__DEFINES__, __CML__DEFINES__);
 
 
-module.exports = function () {
-  _chameleonRuntime2.default.createComponent(exports.default).getOptions();
-};
+exports.default = _chameleonRuntime2.default.createComponent(exports.default).getOptions();
 
 /***/ }),
 
@@ -56,10 +54,7 @@ module.exports = function () {
 
 var __cml__script = __webpack_require__("../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/usr/local/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=qq&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/carousel-item/carousel-item.qq.cml");
 
-      __CML__GLOBAL.__CMLCOMPONNETS__['npm/chameleon-ui-builtin/components/carousel-item/carousel-item'] = __cml__script;
-
 
 /***/ })
 
-},["./node_modules/chameleon-ui-builtin/components/carousel-item/carousel-item.qq.cml"])
-module.exports = __CML__GLOBAL.__CMLCOMPONNETS__['npm/chameleon-ui-builtin/components/carousel-item/carousel-item'];
+},["./node_modules/chameleon-ui-builtin/components/carousel-item/carousel-item.qq.cml"]);

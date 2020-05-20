@@ -1,5 +1,5 @@
 <view class="button-container ">
   <view bindtap="_cmlEventProxy" data-eventtap="{{['handler']}}" class="{{buttonClass}} ">
-    <text>{{text}}</text>
+    <text class="{{textClass}} ">{{text}}</text>
   </view>
 </view>

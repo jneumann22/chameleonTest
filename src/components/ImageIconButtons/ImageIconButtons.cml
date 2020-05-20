@@ -1,26 +1,52 @@
 <template lang="vue">
     <view class="icon-button-container">
-        <view :class="['icon-button', likeIconColor]" @click="onLikeClick"><image class="icon" src="https://m.meetkai.com/static/develop/images/favoriteIcon.png" /></view>
-        <view :class="['icon-button', dislikeIconColor]" @click="onDislikeClick"><image class="icon" src="https://m.meetkai.com/static/develop/images/noThanksIcon.png" /></view>
-        <view :class="['icon-button', shareIconColor]" @touchstart="onShareClick" @touchend="shareIconRevertColor"><image class="icon" src="https://m.meetkai.com/static/develop/images/shareIcon.png" /></view>
+        <view :class="likeIconButton" @click="onLikeClick">
+        <image class="icon" src="https://m.meetkai.com/static/develop/images/favoriteIcon.png" />
+        </view>
+
+        <view :class="dislikeIconButton" @click="onDislikeClick">
+        <image class="icon" src="https://m.meetkai.com/static/develop/images/noThanksIcon.png" />
+        </view>
+
+        <view :class="shareIconButton" @touchstart="onShareClick" @touchend="shareIconRevertColor">
+        <image class="icon" src="https://m.meetkai.com/static/develop/images/shareIcon.png" />
+        </view>
+        
     </view>
 </template>
 
 <script>
 class ImageIconButtons {
+  props = {
+     domain: {type: String, default: "test"},
+     itemID: {type: String, default: "test"}
+  }
+
   computed = {
-    data () {
-    return {
+    likeIconButton () {
+      return `icon-button ${this.likeIconColor}`
+    },
+    dislikeIconButton () {
+      return `icon-button ${this.dislikeIconColor}`
+    },
+    shareIconButton () {
+      return `icon-button ${this.shareIconColor}`
+    }
+  }
+
+  data = {
+     
       isLiked: false,
       isDisliked: false,
       likeIconColor: 'black',
       dislikeIconColor: 'black',
       shareIconColor: 'black'
     }
-  },
 
-    onLikeClick () {
-      if (weex.config.env.platform === 'Web') {
+  methods = {
+       onLikeClick () {
+         console.log('like button clicked')
+      // if (weex.config.env.platform === 'Web') {
         if (this.isLiked) { // if it's already rated, undo rating first
           this.isLiked = false
           this.likeIconColor = 'black'
@@ -33,34 +59,35 @@ class ImageIconButtons {
           this.isLiked = true
           this.likeIconColor = 'red'
         }
-      } else {
-        const userAction = weex.requireModule('UserAction')
-        if (this.isLiked) { // if it's already rated, undo rating first
-          this.isLiked = false
-          this.likeIconColor = 'black'
-          userAction.rateItem(this.domain, this.itemID, true, false)
-        } else if (this.isDisliked) {
-          this.isDisliked = false
-          this.isLiked = true
-          this.dislikeIconColor = 'black'
-          this.likeIconColor = 'red'
-          userAction.rateItem(this.domain, this.itemID, false, false)
-          userAction.rateItem(this.domain, this.itemID, true, true)
-        } else {
-          this.isLiked = true
-          this.likeIconColor = 'red'
-          userAction.rateItem(this.domain, this.itemID, true, true)
-        }
-      }
-    },
-
+       },
+      // } else {
+      //   const userAction = weex.requireModule('UserAction')
+      //   if (this.isLiked) { // if it's already rated, undo rating first
+      //     this.isLiked = false
+      //     this.likeIconColor = 'black'
+      //     userAction.rateItem(this.domain, this.itemID, true, false)
+      //   } else if (this.isDisliked) {
+      //     this.isDisliked = false
+      //     this.isLiked = true
+      //     this.dislikeIconColor = 'black'
+      //     this.likeIconColor = 'red'
+      //     userAction.rateItem(this.domain, this.itemID, false, false)
+      //     userAction.rateItem(this.domain, this.itemID, true, true)
+      //   } else {
+      //     this.isLiked = true
+      //     this.likeIconColor = 'red'
+      //     userAction.rateItem(this.domain, this.itemID, true, true)
+      //   }
+      // }
+ 
+    
     onDislikeClick () {
-      if (this.museDislikeHandler) {
-        this.museDislikeHandler()
-      } else {
-        console.log('museDislike Handler undefined')
-      }
-      if (weex.config.env.platform === 'Web') {
+      // if (this.museDislikeHandler) {
+      //   this.museDislikeHandler()
+      // } else {
+      //   console.log('museDislike Handler undefined')
+      // }
+      // if (weex.config.env.platform === 'Web') {
         if (this.isDisliked) { // if it's already rated, undo rating first
           this.isDisliked = false
           this.dislikeIconColor = 'black'
@@ -73,72 +100,67 @@ class ImageIconButtons {
           this.isDisliked = true
           this.dislikeIconColor = 'blue'
         }
-      } else {
-        const userAction = weex.requireModule('UserAction')
-        if (this.isDisliked) { // if it's already rated, undo rating first
-          this.isDisliked = false
-          this.dislikeIconColor = 'black'
-          userAction.rateItem(this.domain, this.itemID, false, false)
-        } else if (this.isLiked) {
-          this.isLiked = false
-          this.isDisliked = true
-          this.likeIconColor = 'black'
-          this.dislikeIconColor = 'blue'
-          userAction.rateItem(this.domain, this.itemID, true, false)
-          userAction.rateItem(this.domain, this.itemID, false, true)
-        } else {
-          this.isDisliked = true
-          this.dislikeIconColor = 'blue'
-          userAction.rateItem(this.domain, this.itemID, false, true)
-        }
-      }
+      // } else {
+      //   const userAction = weex.requireModule('UserAction')
+      //   if (this.isDisliked) { // if it's already rated, undo rating first
+      //     this.isDisliked = false
+      //     this.dislikeIconColor = 'black'
+      //     userAction.rateItem(this.domain, this.itemID, false, false)
+      //   } else if (this.isLiked) {
+      //     this.isLiked = false
+      //     this.isDisliked = true
+      //     this.likeIconColor = 'black'
+      //     this.dislikeIconColor = 'blue'
+      //     userAction.rateItem(this.domain, this.itemID, true, false)
+      //     userAction.rateItem(this.domain, this.itemID, false, true)
+      //   } else {
+      //     this.isDisliked = true
+      //     this.dislikeIconColor = 'blue'
+      //     userAction.rateItem(this.domain, this.itemID, false, true)
+      //   }
+      // }
     },
-
-  onShareClick () {
-      if (weex.config.env.platform === 'Web') {
+    onShareClick () {
+      // if (weex.config.env.platform === 'Web') {
         this.shareIconColor = 'grey'
-        console.log('Shared item')
-      } else {
-        this.shareIconColor = 'grey'
-        const userAction = weex.requireModule('UserAction')
-        userAction.shareItem(this.domain, this.itemID)
-      }
+        this.$cmlEmit('Shared item')
+      // } else {
+      //   this.shareIconColor = 'grey'
+      //   const userAction = weex.requireModule('UserAction')
+      //   userAction.shareItem(this.domain, this.itemID)
+      // }
     },
     shareIconRevertColor () {
       this.shareIconColor = 'black'
     }
+  }
 
-
-  };
+}
   
-  props: {
-    domain: String,
-    itemID: String,
-    museDislikeHandler: Function
-  };
+  
  
     
     
-  }
+  
  export default new ImageIconButtons();
 </script>
 
 <style scoped>
     .icon-button-container {
         position: absolute;
-        right: 30px;
-        bottom: 30px;
+        right: 30cpx;
+        bottom: 30cpx;
     }
     .icon {
-        height: 50px;
-        width: 50px;
+        height: 50cpx;
+        width: 50cpx;
     }
     .icon-button {
         height: auto;
         width: auto;
-        border-radius: 25px;
+        border-radius: 25cpx;
         opacity: 0.7;
-        margin-top: 25px;
+        margin-top: 25cpx;
     }
     .black {
       background-color: #000

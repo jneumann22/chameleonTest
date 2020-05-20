@@ -1,5 +1,4 @@
 /******/ var __CML__GLOBAL = {};
-/******/ __CML__GLOBAL.__CMLCOMPONNETS__ = {};
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	var parentJsonpFunction = __CML__GLOBAL["webpackJsonp"];

@@ -6,12 +6,16 @@
           text="Meditate Now"
           defaultButtonStyle="default-orange-button"
           defaultTextStyle="default-orange-button-text"
+          textColor="text-teal"
+          textSize="font-large"
           :handler="pressActionButton"
+          
       />
-       <Footer domain="domain" musePivot="muse_pivot"/>
-       <ImageIconButtons :domain="domain"
-          :itemID="item_id" />
+       
+      <ImageIconButtons
+          :itemID="item_id" /> 
       </view>
+      <Footer domain="domain" musePivot="muse_pivot"/>
     </view>
   </view>
     <!--    <Gallery :images="getImages" :domain="domain" />
@@ -77,6 +81,9 @@ class MeditationCard{
     notImplemented () {
       console.log("Handling this event hasn't been implemented")
     }
+
+   
+    
   };
  
   /*components: {
@@ -128,6 +135,10 @@ class MeditationCard{
       return this.focus ? this.focus : ''
     }
   };
+
+  
+
+  
   
 }
 
@@ -145,6 +156,11 @@ import StarRating from '@/components/StarRating'
 import Thumbnail from '@/components/Thumbnail'
 import OtherOptions from '@/components/OtherOptions'
 import Suggestion from '@/components/Suggestion'*/
+
+import my_json from './example.json'
+export default {
+  myjson: my_json
+}
 
 
 </script>
