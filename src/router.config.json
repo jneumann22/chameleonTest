@@ -3,9 +3,9 @@
   "domain": "https://www.chameleon.com",
   "routes":[
     {
-      "url": "/cml/h5/index",
-      "path": "/pages/first-page/first-page",
-      "name": "首页",
+      "url": "/",
+      "path": "/domains/meditation/meditation-card",
+      "name": "Meditation",
       "mock": "index.php"
     }
   ]

@@ -6,7 +6,7 @@
         "navigationBarTextStyle": "black"
     },
     "pages": [
-        "pages/first-page/first-page"
+        "domains/meditation/meditation-card"
     ],
     "usingComponents": {}
 }

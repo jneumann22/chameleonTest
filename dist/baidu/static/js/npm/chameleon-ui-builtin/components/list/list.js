@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("../../../../manifest.js");
-__CML__GLOBAL.webpackJsonp([23],{
+__CML__GLOBAL.webpackJsonp([17],{
 
 /***/ "../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/usr/local/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=component&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./node_modules/chameleon-ui-builtin/components/list/list.baidu.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -8,7 +8,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _regenerator = __webpack_require__("./node_modules/babel-runtime/regenerator/index.js");
+var _regenerator = __webpack_require__("../../node_modules/babel-runtime/regenerator/index.js");
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 

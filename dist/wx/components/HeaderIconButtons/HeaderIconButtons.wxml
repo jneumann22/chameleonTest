@@ -1,8 +1,0 @@
-<view class="icon-button-container ">
-  <view wx:if="{{findLocationDetails}}" class="icon-button " bindtap="_cmlEventProxy" data-eventtap="{{['loadMap']}}">
-    <image class="icon " src="https://m.meetkai.com/static/develop/images/websiteIcon.png" resize="cover" />
-  </view>
-  <view wx:if="{{telephone}}" class="icon-button " bindtap="_cmlEventProxy" data-eventtap="{{['makeCall']}}">
-    <image class="icon " src="https://m.meetkai.com/static/develop/images/phoneIcon.png" resize="cover" />
-  </view>
-</view>

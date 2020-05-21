@@ -1,5 +1,5 @@
 var __CML__GLOBAL = require("./manifest.js");
-__CML__GLOBAL.webpackJsonp([8],{
+__CML__GLOBAL.webpackJsonp([9],{
 
 /***/ "../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/babel-loader/lib/index.js?{\"filename\":\"/usr/local/lib/node_modules/chameleon-tool/chameleon.js\"}!../../../../usr/local/lib/node_modules/chameleon-tool/node_modules/chameleon-loader/src/selector.js?type=script&index=0&fileType=app&media=dev&cmlType=baidu&isInjectBaseStyle=true&check={\"enable\":true,\"enableTypes\":[]}!./src/app/app.cml":
 /***/ (function(module, exports, __webpack_require__) {
@@ -65,7 +65,7 @@ var __cml__script = __webpack_require__("../../../../usr/local/lib/node_modules/
 /***/ "./src/router.config.json":
 /***/ (function(module, exports) {
 
-module.exports = {"mode":"history","domain":"https://www.chameleon.com","routes":[{"url":"/cml/h5/index","path":"/pages/first-page/first-page","name":"首页","mock":"index.php"}]}
+module.exports = {"mode":"history","domain":"https://www.chameleon.com","routes":[{"url":"/","path":"/domains/meditation/meditation-card","name":"Meditation","mock":"index.php"}]}
 
 /***/ })
 
