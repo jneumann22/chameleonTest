@@ -4,12 +4,13 @@
       <view class="card-image">
       
       <ImageIconButtons
-          itemID="{{jsonData.item.item_id}}" 
-          domain = "{{jsonData.item.domain}}"
+          itemID="typing strings" 
+          :itemID="{{jsonData.item.item_id}}" 
+          :domain="{{jsonData.item.domain}}"
           /> 
       
       <action-button
-          text="{{jsonData.item.focus}}"
+          :text="{{jsonData.item.focus}}"
           defaultButtonStyle="default-orange-button"
           defaultTextStyle="default-orange-button-text"
           textColor="text-teal"
@@ -102,6 +103,7 @@ class MeditationCard{
   }
 
   data = {
+    // cardData: jsonData
     jsonData
     
   }
