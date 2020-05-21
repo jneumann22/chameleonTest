@@ -4,7 +4,16 @@
       <view class="card-image">
         <text>{{jsonData.item.name}}</text>
       </view>
-      <Footer domain="domain" musePivot="muse_pivot"/>
+      <ActionButton
+          :text="jsonData.item.name"
+          defaultButtonStyle="default-orange-button"
+          defaultTextStyle="default-orange-button-text"
+          textColor="text-teal"
+          textSize="font-large"
+          :handler="pressActionButton"
+          
+      />
+      <Footer domain="domain" :musePivot="jsonData.item.muse_pivot" :checkBool="true" :checkColorBool="true"/>
     </view>
   </view>
     <!--    <Gallery :images="getImages" :domain="domain" />
@@ -237,11 +246,10 @@ import Suggestion from '@/components/Suggestion'*/
 {
   "base": {
     "usingComponents": {
-      "ActionButton": "/components/action-button/action-button",
-      "Footer": "/components/Footer/Footer",
-      "HeaderIconButtons": "/components/HeaderIconButtons/HeaderIconButtons",
-      "ImageIconButtons": "/components/ImageIconButtons/ImageIconButtons"
-      "Gallery": "/components/Gallery/Gallery"
+      "ActionButton": "../../components/action-button/action-button",
+      "Footer": "../../components/Footer/Footer",
+      "HeaderIconButtons": "../../components/HeaderIconButtons/HeaderIconButtons",
+      "ImageIconButtons": "../../components/ImageIconButtons/ImageIconButtons"
     }
   }
 }

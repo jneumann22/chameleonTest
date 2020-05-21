@@ -3,6 +3,7 @@
     <view class="card-image ">
       <text>{{jsonData.item.name}}</text>
     </view>
-    <Footer domain="domain" musePivot="muse_pivot" />
+    <ActionButton text="{{jsonData.item.name}}" defaultButtonStyle="default-orange-button" defaultTextStyle="default-orange-button-text" textColor="text-teal" textSize="font-large" handler="{{pressActionButton}}" />
+    <Footer domain="domain" musePivot="{{jsonData.item.muse_pivot}}" checkBool="{{true}}" checkColorBool="{{true}}" />
   </view>
 </view>

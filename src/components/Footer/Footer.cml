@@ -1,11 +1,12 @@
-<template lang="vue">
+ <template lang="vue"> 
     <view class="footer-container">
         <view class="footer-button" @click="onSearchClick">
           <text class="button-text font-semibold">New Search</text>
         </view>
-        <view v-if="musePivot && domain" class="center-line" />
-        <view v-if="musePivot && domain" class="footer-button" @click="onMoreResultsClick">
-          <text class="button-text font-semibold">More Results</text>
+      <!--  <view v-if="musePivot && domain" class="center-line" />
+        <view v-if="musePivot && domain" class="footer-button" @click="onMoreResultsClick"> -->
+        <view v-if="checkBool" class="footer-button" @click="onMoreResultsClick"> 
+          <text :class="['button-text', 'font-semibold', makeBlue]">More Results</text>
         </view>
     </view>
 </template>
@@ -37,12 +38,19 @@
           userAction.musePivotWx(this.musePivot, this.domain)
         }*/
         console.log('No muse pivot')
+      },
+      makeBlue () {
+        console.log('text-green')
+        return this.checkColorBool ? 'text-blue' : 'text-green'
+        // return 'text-green'
       }
     
    };
-   props: {
+   props = {
     domain: String,
-    musePivot: String
+    musePivot: String,
+    checkBool: Boolean,
+    checkColorBool: Boolean
   }
  }
 
@@ -69,7 +77,7 @@
   }
   .button-text {
     font-size: 35px;
-    color: #D3D3D3;
+    /* color: #D3D3D3; */
     text-align: center;
     line-height: 34px;
   }
@@ -81,6 +89,14 @@
   .font-semibold {
     font-family: Source Sans Pro SemiBold Weex;
     font-weight: 600;
+  }
+
+  .text-blue {
+    color: #0000FF;
+  }
+
+  .text-green {
+    color: #008000;
   }
 </style>
 
