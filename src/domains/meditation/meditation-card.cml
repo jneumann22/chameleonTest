@@ -2,8 +2,14 @@
   <view class="screen-container">
     <view class="card-container">
       <view class="card-image">
+      
+      <ImageIconButtons
+          itemID="{{jsonData.item.item_id}}" 
+          domain = "{{jsonData.item.domain}}"
+          /> 
+      
       <action-button
-          text="Meditate Now"
+          text="{{jsonData.item.focus}}"
           defaultButtonStyle="default-orange-button"
           defaultTextStyle="default-orange-button-text"
           textColor="text-teal"
@@ -11,10 +17,14 @@
           :handler="pressActionButton"
           
       />
+      
+       <OtherOptions/>
+
+      
        
-      <ImageIconButtons
-          :itemID="item_id" /> 
-      </view>
+     </view>
+
+      
       <Footer domain="domain" musePivot="muse_pivot"/>
     </view>
   </view>
@@ -73,7 +83,14 @@
 
 
 <script>
+
+import jsonData from './example.json'
+
 class MeditationCard{
+  
+  
+  
+
   methods = {
     pressActionButton: function () {
       console.log("handing this event hasnt been implemented")
@@ -82,9 +99,12 @@ class MeditationCard{
       console.log("Handling this event hasn't been implemented")
     }
 
-   
+  }
+
+  data = {
+    jsonData
     
-  };
+  }
  
   /*components: {
     OtherOptions,
@@ -99,7 +119,7 @@ class MeditationCard{
     Suggestion
   };*/
   props: {
-    item_id: String,
+    item_id: {type: String, default: 'Test'},
     title: String,
     keywords: {type: Array, default: 'Test'},
     img_urls: {type: Array, default: 'Test'},
@@ -136,6 +156,9 @@ class MeditationCard{
     }
   };
 
+  mounted() {
+    console.log(jsonData)
+  }
   
 
   
@@ -157,10 +180,7 @@ import Thumbnail from '@/components/Thumbnail'
 import OtherOptions from '@/components/OtherOptions'
 import Suggestion from '@/components/Suggestion'*/
 
-import my_json from './example.json'
-export default {
-  myjson: my_json
-}
+
 
 
 </script>
@@ -246,7 +266,8 @@ export default {
       "action-button": "/components/action-button/action-button",
       "Footer": "/components/Footer/Footer",
       "HeaderIconButtons": "/components/HeaderIconButtons/HeaderIconButtons",
-      "ImageIconButtons": "/components/ImageIconButtons/ImageIconButtons"
+      "ImageIconButtons": "/components/ImageIconButtons/ImageIconButtons",
+      "OtherOptions": "/components/OtherOptions/OtherOptions",
     }
   }
 }

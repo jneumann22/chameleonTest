@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import jsonData from '../../domains/meditation/example.json'
+// import jsonData from '../../domains/meditation/example.json'
 
 
 class FirstPage {
-  data = {
-    cardData: jsonData
-  }
+  // data = {
+  //   jsonData
+  // }
 
   computed = {
   }
@@ -39,6 +39,22 @@ class FirstPage {
   }
 
   mounted() {
+    // item_id = jsonData.item.item_id
+    // title = jsonData.item.title
+    // keywords = jsonData.item.keywords
+    // img_urls = jsonData.item.img_urls
+    // fit_urls = jsonData.item.fit_urls
+    // muse_pivot = jsonData.item.muse_pivot
+    // rank = jsonData.item.rank
+    // personalized_rank = jsonData.item.personalized_rank
+    // buy_url = jsonData.item.buy_url
+    // share_url = jsonData.item.share_url
+    // domain = jsonData.item.domain
+    // suggestions = jsonData.item.suggestions
+    // uid_url = jsonData.item.uid_url
+    // play_url = jsonData.item.play_url
+    // time = jsonData.item.time
+    // alternatives = jsonData.item.alternatives
   }
 
   onHide() {

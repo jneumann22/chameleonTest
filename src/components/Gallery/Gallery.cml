@@ -1,22 +1,22 @@
 <template lang="vue">
     <view>
       <image
-        @load="handleLoad"
+        @load="{{this.handleLoad}}"
         v-if="!imageSrc || images.length === 0"
-        :class="['image', border && 'rounded-border']"
+        :class="imageClass"
         :resize="resize"
         :src="noImage"
       />
       <image
       v-if="imageSrc.length === 1"
-      :class="['image', border && 'rounded-border']"
+      :class="imageClass"
       :resize="resize"
       :src="imageSrc[0]"
       @load="handleLoad"
       />
-      <slider v-if="imageSrc.length > 1" :class="['slider', border && 'rounded-border']" interval="3000" auto-play="true">
+      <slider v-if="imageSrc.length > 1" :class="sliderClass" interval="3000" auto-play="true">
         <view class="image-frame" v-for="img in imageSrc" :key="img">
-          <image @load="handleLoad" :class="['image', border && 'rounded-border']" :resize="resize" :src="img"></image>
+          <image @load="handleLoad" :class="imageClass" :resize="resize" :src="img"></image>
         </view>
         <indicator class="slider-indicator" />
       </slider>
@@ -24,22 +24,21 @@
 </template>
 
 <script>
-export default {
-  name: 'Gallery',
-  props: {
-    images: Array[String],
-    resize: {type: String, default: 'cover'},
-    border: {type: Boolean, default: true},
-    domain: String
-  },
-  data () {
-    return {
-      imageSrc: this.images
-    }
-  },
-  computed: {
-    noImage: function () {
-      if (this.domain === 'shoe' || this.domain === 'recipe') {
+
+import cml from 'cml-tt-api'
+
+class Gallery {
+  computed = {
+      imageClass() {
+        return `image rounded-border`
+      },
+
+      sliderClass() {
+        return `slider rounded-border`
+      },
+
+      noImage() {
+       if (this.domain === 'shoe' || this.domain === 'recipe') {
         return `https://m.meetkai.com/static/develop/kai_birds/gallery-${this.domain}.png`
       } else if (this.domain) {
         return `https://m.meetkai.com/static/develop/domains/${this.domain}.png`
@@ -47,7 +46,18 @@ export default {
         return 'https://m.meetkai.com/static/develop/images/galleryPlaceholderTemp.png'
       }
     }
-  },
+
+
+  }
+
+
+  props: {
+    images: {type: Array, default: []},
+    resize: {type: String, default: 'cover'},
+    border: {type: Boolean, default: true},
+    domain: {type: String, default: "gaming"}
+  }
+
   methods: {
     handleLoad (event) {
       if (event.success) {
@@ -64,36 +74,53 @@ export default {
         }
       }
     }
+  
   }
+
+data {
+  imageSrc = this.images
 }
+
+
+
+}
+  
+  
+  
+ export default new Gallery();
+
 </script>
 
 <style scoped>
   .rounded-border {
-    border-top-left-radius: 37px;
-    border-top-right-radius: 37px;
+    border-top-left-radius: 37cpx;
+    border-top-right-radius: 37cpx;
   }
   .slider {
-    height: 462px;
-    width: 710px;
+    height: 462cpx;
+    width: 710cpx;
   }
   .slider-indicator {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 60px;
+    height: 60cpx;
     opacity: 0.8;
     item-color: #fff;
     item-selected-color: #00A2B0;
   }
   .image-frame {
     position: relative;
-    height: 462px;
-    width: 710px;
+    height: 462cpx;
+    width: 710cpx;
   }
   .image {
-    height: 462px;
-    width: 710px;
+    height: 462cpx;
+    width: 710cpx;
   }
 </style>
+<script cml-type="json">
+{
+}
+</script>

@@ -1,5 +1,18 @@
-<template>
-  <view><text>Hello Chameleon!</text></view>
+<template lang="vue">
+  <view v-if="{{getOtherOptions.length}}">
+  <text :class="textClass">Other Options</text>
+ <!--  <scroller class="scroller" scroll-direction="horizontal">
+   <view v-for="option in getOtherOptions" :key="option.id">
+      <Thumbnail
+        :domain="domain"
+        :name="option.name"
+        :image="option.img"
+        :item_id="option.id"
+        :handler="expand"
+      /> 
+    </view>
+  </scroller>-->
+</view>
 </template>
 
 <script>
@@ -7,39 +20,43 @@
 class OtherOptions {
 
   data = {
+    getOtherOptions: [{id: 3423, name: 'test1', img: require("../../assets/images/chameleon.png")},{id: 3422, name: 'test2', img: require("../../assets/images/chameleon.png")} ]
   }
 
   computed = {
+    textClass() {
+      return `title font-semibold`
+    }
   }
 
   watch  = {
   }
 
   methods = {
+
   }
 
-  beforeCreate() {
-  }
 
-  created() {
-  }
-
-  beforeMount() {
-  }
-
-  mounted() {
-  }
-
-  beforeDestroy() {
-  }
-
-  destroyed() {
-  }
 }
 
 export default new OtherOptions();
 </script>
-<style>
+<style scoped>
+
+ .title {
+    color: #2B2B2B;
+    font-size: 40px;
+    word-wrap: break-word;
+  }
+  .font-semibold {
+    font-family: Source Sans Pro SemiBold Weex;
+    font-weight: 600;
+  }
+  .scroller {
+    display: inline-flex;
+    flex-direction: row;
+  }
+
 
 </style>
 <script cml-type="json">

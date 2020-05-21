@@ -22,7 +22,7 @@ class ActionButton {
   };
 
   props = {
-    text: {type: String, default: 'Test'},
+    text: {type: String, default: 'Test1'},
     defaultButtonStyle: String,
     defaultTextStyle: String,
     buttonOutlineColor: String,
@@ -46,10 +46,10 @@ export default new ActionButton();
     width: auto;
   }
   .buttonBody {
-    border-radius: 24px;
+    border-radius: 24cpx;
     justify-content: center;
-    margin: 0 15px;
-    padding: 10px 0;
+    margin: 0 15cpx;
+    padding: 10cpx 0;
     opacity: 1;
   }
   .button-text {
@@ -78,48 +78,48 @@ export default new ActionButton();
     border-color:#00A2B0;
   }
   .small{
-    height: 64px;
-    width: 328px;
+    height: 64cpx;
+    width: 328cpx;
   }
   .large {
-    height: 91px;
-    width: 544px;
+    height: 91cpx;
+    width: 544cpx;
   }
   .outline-solid {
     border: solid;
-    border-width: 1px;
+    border-width: 1cpx;
   }
   .font-large {
-    font-size: 30px;
+    font-size: 30cpx;
   }
   .font-small-bold {
-    font-size: 27px;
+    font-size: 27cpx;
     font-weight: 900;
-    line-height: 34px;
+    line-height: 34cpx;
   }
   .default-orange-button {
     background-color: #E28B08;
-    height: 97px;
-    width: 624px;
+    height: 97cpx;
+    width: 624cpx;
   }
   .half-orange-button {
     background-color: #E28B08;
-    border-radius: 15px;
-    height: 65px;
-    width: 301px;
+    border-radius: 15cpx;
+    height: 65cpx;
+    width: 301cpx;
   }
   .default-orange-button-text {
-    font-size: 39px;
+    font-size: 39cpx;
   }
   .half-orange-button-text {
-    font-size: 33px;
+    font-size: 33cpx;
   }
   .default-teal-button {
     border: solid;
     border-color:#00A2B0;
-    border-width: 1px;
-    height: 64px;
-    width: 328px;
+    border-width: 1cpx;
+    height: 64cpx;
+    width: 328cpx;
   }
 </style>
 <script cml-type="json">
