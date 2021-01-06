@@ -7,7 +7,7 @@
   "scripts": {},
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chameleon-api": "1.0.0",
     "chameleon-runtime": "1.0.0",
     "chameleon-store": "1.0.0",
